@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using EscapeRoomTracker.Models;
 using EscapeRoomTracker.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace EscapeRoomTracker.Pages.Rooms
 {
+    [Authorize]
     public class AddModel : PageModel
     {
         private IEscapeRoomData _escapeRoomData;

@@ -8,9 +8,42 @@
 <body>
     <header>
         <h1>Escape Room Tracker</h1>
+        @if (User.Identity.IsAuthenticated)
+        {
+            @if (User.Claims.Any(x => x.Type == "name"))
+            {
+                <div>
+                    Hello, @User.Claims.First(x => x.Type == "name").Value
+                </div>
+            }
+            <a asp-controller="Account" asp-action="Logout">Logout</a>
+        }
+        else
+        {
+            <a asp-controller="Account" asp-action="Login">Login</a>
+        }
     </header>
     <div>
         @RenderBody()
     </div>
+
+    @*<footer>
+        @if (User.Identity.IsAuthenticated)
+        {
+            foreach(var identity in User.Identities)
+            {
+                <h3>Identity Name: @identity.Name</h3>
+                foreach(var claim in identity.Claims)
+                {
+                    <li>@claim.Type  - @claim.Value</li>
+                }
+            }
+        }
+        else
+        {
+            <div>You are anonymous</div>
+        }
+    </footer>*@
+
 </body>
 </html>
