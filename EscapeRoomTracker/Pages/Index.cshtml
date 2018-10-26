@@ -9,15 +9,16 @@
 
 @foreach (var escapeRoom in Model.EscapeRooms)
 {
-    <section>
-        <h3>@escapeRoom.Name (@escapeRoom.Id)</h3>
-        <div>
-            Location: @escapeRoom.City
-        </div>
-        <div>
-            <a asp-page="/Rooms/Details" asp-route-id="@escapeRoom.Id">Details</a>
-        </div>
-    </section>
+<section>
+    <h3>@escapeRoom.Name (@escapeRoom.Id)</h3>
+    <div>
+        Location: @escapeRoom.City
+    </div>
+    <div>
+        <a asp-page="/Rooms/Details" asp-route-id="@escapeRoom.Id">Details</a>
+        <a asp-page="/Rooms/Edit" asp-route-id="@escapeRoom.Id">Edit</a>
+    </div>
+</section>
 }
 <br />
 <br />
