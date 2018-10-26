@@ -1,0 +1,19 @@
+﻿@page "{id}"
+@model EscapeRoomTracker.Pages.Rooms.DetailsModel
+@{
+    ViewBag.Title = Model.Room.Name;
+}
+
+<h2>@Model.Room.Name</h2>
+<div>
+    Id: @Model.Room.Id
+</div>
+<div>
+    Location: @Model.Room.City
+</div>
+<div>
+    Escaped: @Model.Room.Escaped
+</div>
+<div>
+    <a asp-page="/Index">Back</a>
+</div>

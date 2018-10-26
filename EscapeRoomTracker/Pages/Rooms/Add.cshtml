@@ -1,0 +1,32 @@
+﻿@page
+@model EscapeRoomTracker.Pages.Rooms.AddModel
+
+@{
+    ViewBag.Title = "Add a new Room";
+}
+
+<h2>Add a new room</h2>
+
+<form method="post">
+
+    <div>
+        <label asp-for="Room.Name"></label>
+        <input asp-for="Room.Name" />
+        <span asp-validation-for="Room.Name"></span>
+    </div>
+    <div>
+        <label asp-for="Room.City"></label>
+        <input asp-for="Room.City" />
+        <span asp-validation-for="Room.City"></span>
+    </div>
+    <div>
+        <label asp-for="Room.Escaped"></label>
+        <input asp-for="Room.Escaped" />
+        <span asp-validation-for="Room.Escaped"></span>
+    </div>
+
+    <input type="submit" name="save" value="Save" />
+</form>
+<div>
+    <a asp-page="/Index">Back</a>
+</div>
