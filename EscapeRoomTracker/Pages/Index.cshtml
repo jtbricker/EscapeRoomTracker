@@ -1,0 +1,26 @@
+﻿@page
+@model EscapeRoomTracker.Pages.HomeModel
+
+@{
+    ViewBag.Title = "Home page";
+}
+
+<h2>Rooms I've Done</h2>
+
+@foreach (var escapeRoom in Model.EscapeRooms)
+{
+    <section>
+        <h3>@escapeRoom.Name (@escapeRoom.Id)</h3>
+        <div>
+            Location: @escapeRoom.City
+        </div>
+        <div>
+            <a asp-page="/Rooms/Details" asp-route-id="@escapeRoom.Id">Details</a>
+        </div>
+    </section>
+}
+<br />
+<br />
+<div>
+    <a asp-page="/Rooms/Add">Add Room</a>
+</div>
